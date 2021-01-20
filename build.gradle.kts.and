@@ -1,0 +1,53 @@
+plugins {
+//    kotlin("multiplatform") version "1.4.10"
+    kotlin("jvm") version "1.4.10"
+   `java-library`
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+/*
+kotlin {
+  val type = "-"
+//  print(type)
+    if (type == "32") {
+      iosArm32("native") {
+        binaries {
+	    framework {
+	      baseName = "ClientDTOs32"
+  	    }
+        }
+      }
+    }
+   else if (type == "64" ) {
+     iosArm64("native") {
+       binaries {
+          framework {
+            baseName = "ClientDTOs64"
+          }
+       }
+     }
+   }
+   else {
+     iosX64("native") {
+       binaries {
+          framework {
+            baseName = "ClientDTOsX64"
+	  }
+       }
+     }}
+   
+}
+*/
+sourceSets.main {
+    java.srcDirs("src/nativeMain/kotlin")
+}
+
+tasks.withType<Wrapper> {
+  gradleVersion = "6.6"
+  distributionType = Wrapper.DistributionType.ALL
+}
+
+

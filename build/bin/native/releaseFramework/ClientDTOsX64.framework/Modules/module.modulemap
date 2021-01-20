@@ -1,0 +1,6 @@
+framework module ClientDTOsX64 {
+    umbrella header "ClientDTOsX64.h"
+
+    export *
+    module * { export * }
+}
